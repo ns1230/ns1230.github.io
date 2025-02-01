@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>メディア出演</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>メディア出演</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">ホーム</a></li>
+                <li><a href="media.html">メディア出演</a></li>
+                <li><a href="books.html">書籍</a></li>
+                <li><a href="contact.html">お問い合わせ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- YouTube Section -->
+    <section>
+        <h2>YouTube</h2>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>タイトル</th>
+                    <th>日付</th>
+                    <th>チャンネル</th>
+                    <th>リンク</th>
+                </tr>
+            </thead>
+            <tbody id="youtube-list">
+                <tr><td colspan="4">読み込み中...</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Magazine Section -->
+    <section>
+        <h2>雑誌掲載</h2>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>タイトル</th>
+                    <th>日付</th>
+                    <th>媒体</th>
+                    <th>リンク</th>
+                </tr>
+            </thead>
+            <tbody id="magazine-list">
+                <tr><td colspan="4">読み込み中...</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <script>
+        fetch('media.json')
+        .then(response => response.json())
+        .then(data => {
+            let youtubeHtml = "";
+            let magazineHtml = "";
+
+            data.forEach(item => {
+                let row = `<tr>
+                            <td>${item.title}</td>
+                            <td>${item.date}</td>
+                            <td>${item.platform}</td>
+                            <td><a href="${item.link}" target="_blank">リンク</a></td>
+                        </tr>`;
+
+                // Filter by Media Type
+                if (item["Media Type 2"] === "YouTube") {
+                    youtubeHtml += row;
+                } else if (item["Media Type 2"] === "Magazine") {
+                    magazineHtml += row;
+                }
+            });
+
+            document.getElementById("youtube-list").innerHTML = youtubeHtml || "<tr><td colspan='4'>データなし</td></tr>";
+            document.getElementById("magazine-list").innerHTML = magazineHtml || "<tr><td colspan='4'>データなし</td></tr>";
+        })
+        .catch(error => console.error("メディアリストの読み込みエラー:", error));
+    </script>
+
+    <footer>
+        <p>&copy; 2024 FXアナリストポートフォリオ</p>
+    </footer>
+</body>
+</html>
