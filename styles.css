@@ -1,14 +1,19 @@
+/* General Page Styling */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif; /* Change this to your preferred font */
+    font-size: 16px; /* Default text size */
+    color: #333; /* Default text color */
+    background-color: #f9f9f9; /* Light background for readability */
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    text-align: center; /* Center all text */
 }
 
+/* Header Styling */
 header {
-    background: #333;
+    background-color: #333;
     color: white;
-    padding: 15px;
+    padding: 15px 0;
     text-align: center;
 }
 
@@ -25,17 +30,26 @@ nav ul li {
 nav ul li a {
     color: white;
     text-decoration: none;
+    font-weight: bold;
 }
 
+
 section {
-    padding: 20px;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 40px 0;
 }
 
 /* General Table Styling */
 table {
     border-collapse: collapse;
-    margin: 20px auto;
+    width: 90%; /* Default width for all tables */
+    max-width: 1000px; /* Prevents tables from becoming too wide */
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
 }
 
 /* Set different widths for each table */
@@ -55,11 +69,20 @@ table {
     width: 60%; 
 }
 
-/* Apply consistent styles to all tables */
-th, td {
-    padding: 10px;
+/* Table Header Styling */
+th {
+    background-color: #007bff; /* Blue header */
+    color: white;
+    padding: 15px;
     text-align: left;
+    font-size: 18px;
+}
+
+/* Table Data Styling */
+td {
+    padding: 12px;
     border: 1px solid #ddd;
+    font-size: 16px;
 }
 
 /* Set column widths for all tables */
@@ -67,6 +90,17 @@ th:nth-child(1), td:nth-child(1) { width: 40%; } /* Title column */
 th:nth-child(2), td:nth-child(2) { width: 20%; } /* Date column */
 th:nth-child(3), td:nth-child(3) { width: 30%; } /* Media platform column */
 th:nth-child(4), td:nth-child(4) { width: 10%; } /* Link column */
+
+/* Link Styling */
+a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
 
 /* Make the tables responsive */
 @media (max-width: 768px) {
@@ -76,16 +110,22 @@ th:nth-child(4), td:nth-child(4) { width: 10%; } /* Link column */
 
     th, td {
         font-size: 14px;
-        padding: 5px;
+        padding: 8px;
     }
+
+    th:nth-child(1), td:nth-child(1) { width: 40%; } /* Adjust title column for smaller screens */
+    th:nth-child(2), td:nth-child(2) { width: 20%; }
+    th:nth-child(3), td:nth-child(3) { width: 30%; }
+    th:nth-child(4), td:nth-child(4) { width: 10%; }
 }
 
+/* Footer Styling - Fixed to Bottom */
 footer {
-    text-align: center;
-    padding: 10px;
-    background: #333;
+    background-color: #004085;
     color: white;
-    position: fixed;
+    text-align: center;
+    padding: 10px 0;
     width: 100%;
+    position: relative; 
     bottom: 0;
 }

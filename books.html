@@ -45,10 +45,10 @@
 
             data.forEach(item => {
                 let row = `<tr>
-                            <td>${item.title}</td>
-                            <td>${item.date}</td>
-                            <td>${item.platform}</td>
-                            <td><a href="${item.link}" target="_blank">リンク</a></td>
+                            <td>${item["Media Title"]}</td>
+                            <td>${item["Publication Date"]}</td>
+                            <td>${item["Media Platform"]}</td>
+                            <td><a href="${item["Link"]}" target="_blank">リンク</a></td>
                         </tr>`;
 
                 // Filter by Media Type
