@@ -32,6 +32,54 @@ section {
     text-align: center;
 }
 
+/* General Table Styling */
+table {
+    border-collapse: collapse;
+    margin: 20px auto;
+}
+
+/* Set different widths for each table */
+#youtube-table {
+    width: 80%; 
+}
+
+#magazine-table {
+    width: 80%; 
+}
+
+#newsarticle-table {
+    width: 80%; 
+}
+
+#books-table {
+    width: 60%; 
+}
+
+/* Apply consistent styles to all tables */
+th, td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+/* Set column widths for all tables */
+th:nth-child(1), td:nth-child(1) { width: 40%; } /* Title column */
+th:nth-child(2), td:nth-child(2) { width: 20%; } /* Date column */
+th:nth-child(3), td:nth-child(3) { width: 30%; } /* Media platform column */
+th:nth-child(4), td:nth-child(4) { width: 10%; } /* Link column */
+
+/* Make the tables responsive */
+@media (max-width: 768px) {
+    table {
+        width: 100%;
+    }
+
+    th, td {
+        font-size: 14px;
+        padding: 5px;
+    }
+}
+
 footer {
     text-align: center;
     padding: 10px;
