@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Media Appearances</title>
+    <title>Books</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>Media Appearances</h1>
+        <h1>Books</h1>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -19,16 +19,51 @@
         </nav>
     </header>
 
+    <!-- Books Section -->
     <section>
-        <h2>TV, YouTube, and Publications</h2>
-        <ul>
-            <li><a href="https://www.youtube.com/example">TV Interview on XYZ</a></li>
-            <li><a href="https://www.magazine.com/example">Article in ABC Magazine</a></li>
-        </ul>
+        <h2>Books</h2>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>タイトル</th>
+                    <th>出版日</th>
+                    <th>出版社</th>
+                    <th>リンク</th>
+                </tr>
+            </thead>
+            <tbody id="books-list">
+                <tr><td colspan="4">読み込み中...</td></tr>
+            </tbody>
+        </table>
     </section>
 
+    <script>
+        fetch('media_simple.json')
+        .then(response => response.json())
+        .then(data => {
+            let booksHtml = "";
+
+            data.forEach(item => {
+                let row = `<tr>
+                            <td>${item.title}</td>
+                            <td>${item.date}</td>
+                            <td>${item.platform}</td>
+                            <td><a href="${item.link}" target="_blank">リンク</a></td>
+                        </tr>`;
+
+                // Filter by Media Type
+                if (item["Media Type 2"] === "Book") {
+                    booksHtml += row;
+                }
+            });
+
+            document.getElementById("books-list").innerHTML = booksHtml || "<tr><td colspan='4'>データなし</td></tr>";
+        })
+        .catch(error => console.error("メディアリストの読み込みエラー:", error));
+    </script>
+
     <footer>
-        <p>&copy; 2024 FX Analyst Portfolio</p>
+        <p>&copy; 2025 佐々木融 Portfolio</p>
     </footer>
 </body>
 </html>
