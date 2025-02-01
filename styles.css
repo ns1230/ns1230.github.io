@@ -102,6 +102,28 @@ a:hover {
     text-decoration: underline;
 }
 
+/* Style the navigation buttons */
+.table-navigation {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.table-navigation button {
+    background-color: #5f0000;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.table-navigation button:hover {
+    background-color: #320000;
+}
+
 /* Make the tables responsive */
 @media (max-width: 768px) {
     table {
