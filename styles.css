@@ -71,7 +71,7 @@ table {
 
 /* Table Header Styling */
 th {
-    background-color: #cb3701; /* Blue header */
+    background-color: #9d0500; /* Blue header */
     color: white;
     padding: 15px;
     text-align: center;
@@ -143,7 +143,7 @@ a:hover {
 
 /* Footer Styling - Fixed to Bottom */
 footer {
-    background-color: #004085;
+    background-color: #6f1919;
     color: white;
     text-align: center;
     padding: 10px 0;
