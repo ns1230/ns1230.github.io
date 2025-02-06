@@ -161,13 +161,19 @@ a:hover {
 @media (max-width: 768px) {
     .table-navigation {
         flex-direction: column; /* Stack buttons in one column on smaller screens */
+        align-items: center; /* ✅ Center buttons horizontally */
+        width: 100%; /* Ensure the navigation container takes full width */
     }
     .button-row {
-        flex-direction: column; /* ✅ Buttons go full-width on mobile */
+        flex-direction: column; /* ✅ Stack buttons vertically */
+        align-items: center; /* ✅ Center each row */
+        width: 100%;
     }
     .table-navigation button {
         width: 80%; /* Make buttons full-width */
-        padding: 5px; /* ✅ More space inside when wrapped */
+        max-width: 400px; /* ✅ Prevent buttons from becoming too wide on tablets */
+        padding: 5px; /* ✅ Adjust padding for better appearance */
+        text-align: center; /* ✅ Keep text centered */
     }
     table {
         width: 80%;
