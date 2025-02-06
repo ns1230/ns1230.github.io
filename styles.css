@@ -163,10 +163,10 @@ a:hover {
         flex-direction: column; /* ✅ Buttons go full-width on mobile */
     }
     .table-navigation button {
-        width: 100%; /* Make buttons full-width */
+        width: 80%; /* Make buttons full-width */
     }
     table {
-        width: 100%;
+        width: 80%;
     }
     th, td {
         font-size: 12px;
