@@ -114,7 +114,7 @@ a:hover {
     flex-direction: column; /* ✅ Stack rows vertically */
     align-items: center; /* ✅ Center buttons horizontally */
     gap: 10px; /* ✅ Space between rows */
-    margin-top: 15px; /* ✅ Reduce space above buttons */
+    margin-top: 100px; /* ✅ Reduce space above buttons */
 }
 
 .button-row {
