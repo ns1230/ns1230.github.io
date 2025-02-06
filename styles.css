@@ -157,17 +157,24 @@ a:hover {
     right: 20px;
     width: 50px; /* Set fixed size */
     height: 50px;
+    z-index: 999; /* Ensure it's on top */
     background-color: #2f0808;
     color: white;
     border: none;
     border-radius: 50%; /* Circular button */
     font-size: 20px;
     cursor: pointer;
-    display: none; /* Hidden initially */
+    display: none; /* ✅ Hide by default */
     align-items: center;
     justify-content: center;
     transition: opacity 0.3s, transform 0.3s;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Show button when it's visible */
+#backToTop.show {
+    display: flex; /* ✅ Make it visible */
+    opacity: 1;
 }
 
 /* Center icon inside button */

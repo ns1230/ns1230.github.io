@@ -139,16 +139,17 @@
         .catch(error => console.error("メディアリストの読み込みエラー:", error));
     
         // Show button when scrolling down
-        window.onscroll = function () {
+        window.addEventListener("scroll", function () {
             let button = document.getElementById("backToTop");
-            if (document.documentElement.scrollTop > 300) {
-                button.style.opacity = "1"; // Make it visible
-                button.style.pointerEvents = "auto";
-            } else {
-                button.style.opacity = "0"; // Hide it
-                button.style.pointerEvents = "none";
+            if (button) {  // ✅ Ensure button exists before modifying it
+                if (window.scrollY > 300) {
+                    button.classList.add("show"); // ✅ Add "show" class to make it visible
+                } else {
+                    button.classList.remove("show"); // ✅ Remove "show" class to hide it
+                }
             }
-        };
+        });
+
 
         // Smooth scroll to top
         function scrollToTop() {
