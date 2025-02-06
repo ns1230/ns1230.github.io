@@ -28,11 +28,10 @@
                     <th>タイトル</th>
                     <th>出版日</th>
                     <th>出版社</th>
-                    <th>リンク</th>
                 </tr>
             </thead>
             <tbody id="books-list">
-                <tr><td colspan="4">読み込み中...</td></tr>
+                <tr><td colspan="3">読み込み中...</td></tr>
             </tbody>
         </table>
     </section>
@@ -45,10 +44,9 @@
 
             data.forEach(item => {
                 let row = `<tr>
-                            <td>${item["Media Title"]}</td>
+                            <td>${item["Link"] ? `<a href="${item["Link"]}" target="_blank">${item["Media Title"]}</a>` : item["Media Title"]}</td>
                             <td>${item["Publication Date"]}</td>
                             <td>${item["Media Platform"]}</td>
-                            <td><a href="${item["Link"]}" target="_blank">リンク</a></td>
                         </tr>`;
 
                 // Filter by Media Type
@@ -57,7 +55,7 @@
                 }
             });
 
-            document.getElementById("books-list").innerHTML = booksHtml || "<tr><td colspan='4'>データなし</td></tr>";
+            document.getElementById("books-list").innerHTML = booksHtml || "<tr><td colspan='3'>データなし</td></tr>";
         })
         .catch(error => console.error("メディアリストの読み込みエラー:", error));
     </script>
