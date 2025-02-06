@@ -171,7 +171,7 @@ a:hover {
     }
     .table-navigation button {
         width: 80%; /* Make buttons full-width */
-        max-width: 400px; /* ✅ Prevent buttons from becoming too wide on tablets */
+        max-width: 350px; /* ✅ Prevent buttons from becoming too wide on tablets */
         padding: 5px; /* ✅ Adjust padding for better appearance */
         text-align: center; /* ✅ Keep text centered */
     }
