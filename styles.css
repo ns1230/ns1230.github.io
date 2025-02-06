@@ -108,13 +108,17 @@ a:hover {
     text-decoration: underline;
 }
 
+.media-about {
+    margin-bottom: 10px; /* Space below title */
+}
+
 /* Style the navigation buttons */
 .table-navigation {
     display: flex;
     flex-direction: column; /* ✅ Stack rows vertically */
     align-items: center; /* ✅ Center buttons horizontally */
     gap: 10px; /* ✅ Space between rows */
-    margin-top: 100px; /* ✅ Reduce space above buttons */
+    margin-top: 0px; /* ✅ Reduce space above buttons */
 }
 
 .button-row {
