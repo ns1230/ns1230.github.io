@@ -138,9 +138,12 @@ a:hover {
     border-radius: 5px;
     transition: background 0.3s;
     width: 350px; /* Set a fixed width for uniform size */
-    height: 45px; /* Ensure all buttons have the same height */
+    min-height: 45px; /* ✅ Ensure minimum height */
+    height: auto; /* ✅ Allow button height to expand */
     text-align: center;
     font-weight: bold;
+    white-space: normal; /* ✅ Allow text to wrap inside */
+    word-wrap: break-word; /* ✅ Break long words */
 }
 
 /* Make buttons same size even if text is shorter */
@@ -164,6 +167,7 @@ a:hover {
     }
     .table-navigation button {
         width: 80%; /* Make buttons full-width */
+        padding: 5px; /* ✅ More space inside when wrapped */
     }
     table {
         width: 80%;
