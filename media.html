@@ -25,15 +25,16 @@
     </section>
     <!-- Section Navigation Buttons -->
     <div class="table-navigation">
-        <button onclick="location.href='#youtube-table'">YouTube</button>
+        <button onclick="location.href='#youtubeFFG-table'">YouTube FFG公式チャンネル</button>
+        <button onclick="location.href='#youtubeOthers-table'">YouTube その他</button>
         <button onclick="location.href='#magazine-table'">東洋経済記事</button>
         <button onclick="location.href='#newsarticle-table'">ロイター記事</button>
     </div>
 
-    <!-- YouTube Section -->
+    <!-- YouTube FFG Section -->
     <section>
-        <h2>YouTube</h2>
-        <table id="youtube-table" border="1">
+        <h2 id="youtubeFFG-table"> YouTube</h2>
+        <table border="1">
             <thead>
                 <tr>
                     <th>タイトル</th>
@@ -42,7 +43,25 @@
                     <th>リンク</th>
                 </tr>
             </thead>
-            <tbody id="youtube-list">
+            <tbody id="youtubeFFG-list">
+                <tr><td colspan="4">読み込み中...</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- YouTube Others Section -->
+    <section>
+        <h2 id="youtubeOthers-table"> YouTube</h2>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>タイトル</th>
+                    <th>日付</th>
+                    <th>チャンネル</th>
+                    <th>リンク</th>
+                </tr>
+            </thead>
+            <tbody id="youtubeOthers-list">
                 <tr><td colspan="4">読み込み中...</td></tr>
             </tbody>
         </table>
@@ -50,8 +69,8 @@
 
     <!-- Magazine Section -->
     <section>
-        <h2>東洋経済記事</h2>
-        <table id="magazine-table" border="1">
+        <h2 id="magazine-table"> 東洋経済記事</h2>
+        <table border="1">
             <thead>
                 <tr>
                     <th>タイトル</th>
@@ -68,8 +87,8 @@
 
     <!-- News Article Section -->
     <section>
-        <h2>ロイター記事</h2>
-        <table id="newsarticle-table" border="1">
+        <h2 id="newsarticle-table">ロイター記事</h2>
+        <table border="1">
             <thead>
                 <tr>
                     <th>タイトル</th>
@@ -88,7 +107,8 @@
         fetch('media_simple.json')
         .then(response => response.json())
         .then(data => {
-            let youtubeHtml = "";
+            let youtubeFFGHtml = "";
+            let youtubeOthersHtml = "";
             let magazineHtml = "";
             let newsarticleHtml = "";
 
@@ -102,7 +122,11 @@
 
                 // Filter by Media Type
                 if (item["Media Type 2"] === "YouTube") {
-                    youtubeHtml += row;
+                    if (item["Media Platform"] === "FFG公式チャンネル") {
+                        youtubeFFGHtml += row;
+                    } else {
+                        youtubeOthersHtml += row;
+                    }
                 } else if (item["Media Platform"] === "東洋経済") {
                     magazineHtml += row;
                 } else if (item["Media Platform"] === "Reuters") {
@@ -110,7 +134,8 @@
                 }
             });
 
-            document.getElementById("youtube-list").innerHTML = youtubeHtml || "<tr><td colspan='4'>データなし</td></tr>";
+            document.getElementById("youtubeFFG-list").innerHTML = youtubeFFGHtml || "<tr><td colspan='4'>データなし</td></tr>";
+            document.getElementById("youtubeOthers-list").innerHTML = youtubeOthersHtml || "<tr><td colspan='4'>データなし</td></tr>";
             document.getElementById("magazine-list").innerHTML = magazineHtml || "<tr><td colspan='4'>データなし</td></tr>";
             document.getElementById("newsarticle-list").innerHTML = newsarticleHtml || "<tr><td colspan='4'>データなし</td></tr>";
         })
