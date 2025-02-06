@@ -112,7 +112,7 @@
 
             data.forEach(item => {
                 let row = `<tr>
-                            <td><a href="${item["Link"]}" target="_blank">${item["Media Title"]}</a></td>
+                            <td>${item["Link"] ? `<a href="${item["Link"]}" target="_blank">${item["Media Title"]}</a>` : item["Media Title"]}</td>
                             <td>${item["Publication Date"]}</td>
                             <td>${item["Media Platform"]}</td>
                         </tr>`;

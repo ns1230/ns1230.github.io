@@ -192,3 +192,6 @@ footer {
     position: relative; 
     bottom: 0;
 }
+section:last-of-type {
+    margin-bottom: 100px; /* Adds space before footer */
+}
