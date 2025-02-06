@@ -44,7 +44,7 @@
                 </tr>
             </thead>
             <tbody id="youtubeFFG-list">
-                <tr><td colspan="4">読み込み中...</td></tr>
+                <tr><td colspan="3">読み込み中...</td></tr>
             </tbody>
         </table>
     </section>
@@ -61,7 +61,7 @@
                 </tr>
             </thead>
             <tbody id="youtubeOthers-list">
-                <tr><td colspan="4">読み込み中...</td></tr>
+                <tr><td colspan="3">読み込み中...</td></tr>
             </tbody>
         </table>
     </section>
@@ -78,7 +78,7 @@
                 </tr>
             </thead>
             <tbody id="magazine-list">
-                <tr><td colspan="4">読み込み中...</td></tr>
+                <tr><td colspan="3">読み込み中...</td></tr>
             </tbody>
         </table>
     </section>
@@ -95,7 +95,7 @@
                 </tr>
             </thead>
             <tbody id="newsarticle-list">
-                <tr><td colspan="4">読み込み中...</td></tr>
+                <tr><td colspan="3">読み込み中...</td></tr>
             </tbody>
         </table>
     </section>
@@ -104,6 +104,7 @@
         fetch('media_simple.json')
         .then(response => response.json())
         .then(data => {
+            console.log("Loaded JSON Data:", data); // Debugging
             let youtubeFFGHtml = "";
             let youtubeOthersHtml = "";
             let magazineHtml = "";
@@ -130,10 +131,10 @@
                 }
             });
 
-            document.getElementById("youtubeFFG-list").innerHTML = youtubeFFGHtml || "<tr><td colspan='4'>データなし</td></tr>";
-            document.getElementById("youtubeOthers-list").innerHTML = youtubeOthersHtml || "<tr><td colspan='4'>データなし</td></tr>";
-            document.getElementById("magazine-list").innerHTML = magazineHtml || "<tr><td colspan='4'>データなし</td></tr>";
-            document.getElementById("newsarticle-list").innerHTML = newsarticleHtml || "<tr><td colspan='4'>データなし</td></tr>";
+            document.getElementById("youtubeFFG-list").innerHTML = youtubeFFGHtml || "<tr><td colspan='3'>データなし</td></tr>";
+            document.getElementById("youtubeOthers-list").innerHTML = youtubeOthersHtml || "<tr><td colspan='3'>データなし</td></tr>";
+            document.getElementById("magazine-list").innerHTML = magazineHtml || "<tr><td colspan='3'>データなし</td></tr>";
+            document.getElementById("newsarticle-list").innerHTML = newsarticleHtml || "<tr><td colspan='3'>データなし</td></tr>";
         })
         .catch(error => console.error("メディアリストの読み込みエラー:", error));
     
