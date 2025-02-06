@@ -152,6 +152,38 @@ a:hover {
     th:nth-child(4), td:nth-child(4) { width: 10%; }
 }
 
+/* Back to Top Button */
+#backToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px; /* Set fixed size */
+    height: 50px;
+    background-color: #2f0808;
+    color: white;
+    border: none;
+    border-radius: 50%; /* Circular button */
+    font-size: 20px;
+    cursor: pointer;
+    display: none; /* Hidden initially */
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s, transform 0.3s;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Center icon inside button */
+#backToTop i {
+    font-size: 22px;
+}
+
+/* Hover Effect */
+#backToTop:hover {
+    background-color: #2f0808;
+    transform: scale(1.15);
+}
+
+
 /* Footer Styling - Fixed to Bottom */
 footer {
     background-color: #6f1919;

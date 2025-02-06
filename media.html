@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tohru Sasaki -FX Analyst- Portfolio</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
     <header>
@@ -140,7 +141,29 @@
             document.getElementById("newsarticle-list").innerHTML = newsarticleHtml || "<tr><td colspan='4'>データなし</td></tr>";
         })
         .catch(error => console.error("メディアリストの読み込みエラー:", error));
+    
+        // Show button when scrolling down
+        window.onscroll = function () {
+            let button = document.getElementById("backToTop");
+            if (document.documentElement.scrollTop > 300) {
+                button.style.opacity = "1"; // Make it visible
+                button.style.pointerEvents = "auto";
+            } else {
+                button.style.opacity = "0"; // Hide it
+                button.style.pointerEvents = "none";
+            }
+        };
+
+        // Smooth scroll to top
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
     </script>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i> <!-- FontAwesome Up Arrow -->
+    </button>
 
     <footer>
         <p>&copy; 2025 Tohru Sasaki Portfolio</p>
