@@ -73,14 +73,14 @@ table {
 th {
     background-color: #9d0500; 
     color: white;
-    padding: 15px;
+    padding: 10px;
     text-align: center;
     font-size: 16px;
 }
 
 /* Table Data Styling */
 td {
-    padding: 12px;
+    padding: 10px;
     border: 1px solid #ddd;
     font-size: 14px;
 }
@@ -117,7 +117,7 @@ a:hover {
     cursor: pointer;
     border-radius: 5px;
     transition: background 0.3s;
-    width: 150px; /* Set a fixed width for uniform size */
+    width: 200px; /* Set a fixed width for uniform size */
     height: 45px; /* Ensure all buttons have the same height */
     text-align: center;
     font-weight: bold;
