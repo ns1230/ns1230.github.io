@@ -41,7 +41,6 @@
                     <th>タイトル</th>
                     <th>日付</th>
                     <th>チャンネル</th>
-                    <th>リンク</th>
                 </tr>
             </thead>
             <tbody id="youtubeFFG-list">
@@ -59,7 +58,6 @@
                     <th>タイトル</th>
                     <th>日付</th>
                     <th>チャンネル</th>
-                    <th>リンク</th>
                 </tr>
             </thead>
             <tbody id="youtubeOthers-list">
@@ -77,7 +75,6 @@
                     <th>タイトル</th>
                     <th>日付</th>
                     <th>媒体</th>
-                    <th>リンク</th>
                 </tr>
             </thead>
             <tbody id="magazine-list">
@@ -95,7 +92,6 @@
                     <th>タイトル</th>
                     <th>日付</th>
                     <th>媒体</th>
-                    <th>リンク</th>
                 </tr>
             </thead>
             <tbody id="newsarticle-list">
@@ -115,10 +111,9 @@
 
             data.forEach(item => {
                 let row = `<tr>
-                            <td>${item["Media Title"]}</td>
+                            <td><a href="${item["Link"]}" target="_blank">${item["Media Title"]}</a></td>
                             <td>${item["Publication Date"]}</td>
                             <td>${item["Media Platform"]}</td>
-                            <td><a href="${item["Link"]}" target="_blank">リンク</a></td>
                         </tr>`;
 
                 // Filter by Media Type

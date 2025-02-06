@@ -86,10 +86,9 @@ td {
 }
 
 /* Set column widths for all tables */
-th:nth-child(1), td:nth-child(1) { width: 40%; } /* Title column */
+th:nth-child(1), td:nth-child(1) { width: 50%; } /* Title column with link */
 th:nth-child(2), td:nth-child(2) { width: 20%; } /* Date column */
 th:nth-child(3), td:nth-child(3) { width: 30%; } /* Media platform column */
-th:nth-child(4), td:nth-child(4) { width: 10%; } /* Link column */
 
 /* Link Styling */
 a {
@@ -146,10 +145,9 @@ a:hover {
         padding: 8px;
     }
 
-    th:nth-child(1), td:nth-child(1) { width: 40%; } /* Adjust title column for smaller screens */
+    th:nth-child(1), td:nth-child(1) { width: 50%; } /* Adjust title column for smaller screens */
     th:nth-child(2), td:nth-child(2) { width: 20%; }
     th:nth-child(3), td:nth-child(3) { width: 30%; }
-    th:nth-child(4), td:nth-child(4) { width: 10%; }
 }
 
 /* Back to Top Button */
