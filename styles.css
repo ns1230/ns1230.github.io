@@ -86,9 +86,9 @@ td {
 }
 
 /* Set column widths for all tables */
-th:nth-child(1), td:nth-child(1) { width: 50%; } /* Title column with link */
+th:nth-child(1), td:nth-child(1) { width: 60%; } /* Title column with link */
 th:nth-child(2), td:nth-child(2) { width: 20%; } /* Date column */
-th:nth-child(3), td:nth-child(3) { width: 30%; } /* Media platform column */
+th:nth-child(3), td:nth-child(3) { width: 20%; } /* Media platform column */
 
 /* Link Styling */
 a {
@@ -103,8 +103,16 @@ a:hover {
 
 /* Style the navigation buttons */
 .table-navigation {
-    text-align: center;
-    margin: 20px 0;
+    display: flex;
+    flex-direction: column; /* ✅ Stack rows vertically */
+    align-items: center; /* ✅ Center buttons horizontally */
+    gap: 10px; /* ✅ Space between rows */
+}
+
+.button-row {
+    display: flex;
+    justify-content: center; /* ✅ Center buttons inside each row */
+    gap: 10px; /* ✅ Space between buttons */
 }
 
 .table-navigation button {
@@ -117,7 +125,7 @@ a:hover {
     cursor: pointer;
     border-radius: 5px;
     transition: background 0.3s;
-    width: 200px; /* Set a fixed width for uniform size */
+    width: 400px; /* Set a fixed width for uniform size */
     height: 45px; /* Ensure all buttons have the same height */
     text-align: center;
     font-weight: bold;
@@ -136,18 +144,25 @@ a:hover {
 
 /* Make the tables responsive */
 @media (max-width: 768px) {
+    .table-navigation {
+        flex-direction: column; /* Stack buttons in one column on smaller screens */
+    }
+    .button-row {
+        flex-direction: column; /* ✅ Buttons go full-width on mobile */
+    }
+    .table-navigation button {
+        width: 100%; /* Make buttons full-width */
+    }
     table {
         width: 100%;
     }
-
     th, td {
         font-size: 12px;
         padding: 8px;
     }
-
-    th:nth-child(1), td:nth-child(1) { width: 50%; } /* Adjust title column for smaller screens */
+    th:nth-child(1), td:nth-child(1) { width: 60%; } /* Adjust title column for smaller screens */
     th:nth-child(2), td:nth-child(2) { width: 20%; }
-    th:nth-child(3), td:nth-child(3) { width: 30%; }
+    th:nth-child(3), td:nth-child(3) { width: 20%; }
 }
 
 /* Back to Top Button */
