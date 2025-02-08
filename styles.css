@@ -20,13 +20,8 @@ body {
 header {
     background-color: #333;
     color: white;
-    padding: 15px 0;
+    padding: 15px 20px;
     text-align: center;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
 }
 
 nav ul li {
@@ -39,6 +34,53 @@ nav ul li a {
     text-decoration: none;
     font-weight: bold;
 }
+
+/* Navigation Bar */
+nav {
+    display: flex;
+    justify-content: space-between; /* ✅ Pushes login button to the right */
+    align-items: center;
+    padding: 10px 20px;
+}
+
+/* Left-side navigation (menu items) */
+.nav-left .main-nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-left .main-nav li {
+    margin: 0 15px;
+}
+
+.nav-left .main-nav li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Right-side navigation (Login button) */
+.nav-right {
+    margin-left: auto; /* ✅ Pushes login button to the right */
+}
+
+/* Login Button Styling */
+.login-button {
+    background-color: #5f0000;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.login-button:hover {
+    background-color: #320000;
+}
+
 
 
 section {
