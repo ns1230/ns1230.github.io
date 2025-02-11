@@ -49,7 +49,7 @@ nav {
 }
 
 .nav-center {
-    flex-grow: 1; /* ✅ Allows menu to center */
+    flex-grow: 2; 
     display: flex;
     justify-content: center; /* ✅ Center menu items */
 }
@@ -74,7 +74,9 @@ nav {
 
 /* Right-side navigation (Login button) */
 .nav-right {
+    flex: 1; /* ✅ Balances space */
     display: flex;
+    justify-content: flex-end; /* ✅ Ensures Login button stays at far right */
     align-items: center;
 }
 
