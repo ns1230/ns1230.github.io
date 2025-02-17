@@ -248,6 +248,41 @@ a:hover {
     th:nth-child(3), td:nth-child(3) { width: 20%; }
 }
 
+/* Make the mobile phone responsive */
+@media (max-width: 480px) {
+    .header .nav .nav-center .main-nav{
+        flex-direction: column; /* Stack buttons in one column on smaller screens */
+        align-items: center; /* ✅ Center buttons horizontally */
+        width: 100%; /* Ensure the navigation container takes full width */
+    }
+    .table-navigation {
+        flex-direction: column; /* Stack buttons in one column on smaller screens */
+        align-items: center; /* ✅ Center buttons horizontally */
+        width: 100%; /* Ensure the navigation container takes full width */
+    }
+    .button-row {
+        flex-direction: column; /* ✅ Stack buttons vertically */
+        align-items: center; /* ✅ Center each row */
+        width: 100%;
+    }
+    .table-navigation button {
+        width: 80%; /* Make buttons full-width */
+        max-width: 350px; /* ✅ Prevent buttons from becoming too wide on tablets */
+        padding: 5px; /* ✅ Adjust padding for better appearance */
+        text-align: center; /* ✅ Keep text centered */
+    }
+    table {
+        width: 80%;
+    }
+    th, td {
+        font-size: 12px;
+        padding: 8px;
+    }
+    th:nth-child(1), td:nth-child(1) { width: 60%; } /* Adjust title column for smaller screens */
+    th:nth-child(2), td:nth-child(2) { width: 20%; }
+    th:nth-child(3), td:nth-child(3) { width: 20%; }
+}
+
 /* Back to Top Button */
 #backToTop {
     position: fixed;
