@@ -106,7 +106,7 @@ section {
 
 /* General Table Styling */
 table {
-    border-collapse: collapse;
+    border-collapse: collapse; /*隣接するボーダーラインを重ねあわせて表示する*/
     width: 90%; /* Default width for all tables */
     max-width: 1000px; /* Prevents tables from becoming too wide */
     background: white;
@@ -215,6 +215,11 @@ a:hover {
 
 /* Make the tables responsive */
 @media (max-width: 768px) {
+    .header .nav .nav-center .main-nav{
+        flex-direction: column; /* Stack buttons in one column on smaller screens */
+        align-items: center; /* ✅ Center buttons horizontally */
+        width: 100%; /* Ensure the navigation container takes full width */
+    }
     .table-navigation {
         flex-direction: column; /* Stack buttons in one column on smaller screens */
         align-items: center; /* ✅ Center buttons horizontally */
